@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Objection</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0f0f13;
+      --surface: #1a1a24;
+      --border: #2a2a3a;
+      --accent: #c8a96e;
+      --accent-dim: #a0834e;
+      --text-primary: #e8e4dc;
+      --text-secondary: #9a9490;
+      --text-muted: #6a6560;
+      --radius: 10px;
+      --max-width: 780px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      padding: 48px 24px 80px;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+
+    .app-badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(200, 169, 110, 0.1);
+      border: 1px solid rgba(200, 169, 110, 0.25);
+      border-radius: 20px;
+      padding: 4px 14px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    header h1 span {
+      color: var(--accent);
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    /* ── Table of contents ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .toc h2 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+    }
+
+    .toc li {
+      margin-bottom: 6px;
+    }
+
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.15s;
+    }
+
+    .toc a:hover {
+      color: var(--text-primary);
+      text-decoration: underline;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 52px;
+    }
+
+    section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(200, 169, 110, 0.12);
+      border: 1px solid rgba(200, 169, 110, 0.3);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Callout boxes ── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .callout-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .callout-body {
+      flex: 1;
+    }
+
+    .callout-body strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .callout-body p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .callout.info {
+      background: rgba(200, 169, 110, 0.08);
+      border: 1px solid rgba(200, 169, 110, 0.22);
+    }
+
+    .callout.info .callout-icon,
+    .callout.info strong {
+      color: var(--accent);
+    }
+
+    .callout.safe {
+      background: rgba(80, 180, 120, 0.07);
+      border: 1px solid rgba(80, 180, 120, 0.2);
+    }
+
+    .callout.safe .callout-icon,
+    .callout.safe strong {
+      color: #5ab87a;
+    }
+
+    .callout.warn {
+      background: rgba(220, 140, 60, 0.07);
+      border: 1px solid rgba(220, 140, 60, 0.2);
+    }
+
+    .callout.warn .callout-icon,
+    .callout.warn strong {
+      color: #dc8c3c;
+    }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    .data-table thead tr {
+      background: var(--surface);
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tbody tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .tag.no {
+      background: rgba(80, 180, 120, 0.12);
+      color: #5ab87a;
+      border: 1px solid rgba(80, 180, 120, 0.25);
+    }
+
+    .tag.third-party {
+      background: rgba(220, 140, 60, 0.1);
+      color: #dc8c3c;
+      border: 1px solid rgba(220, 140, 60, 0.22);
+    }
+
+    /* ── Links ── */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Unordered lists ── */
+    ul {
+      padding-left: 22px;
+      margin: 10px 0 14px;
+      color: var(--text-secondary);
+    }
+
+    ul li {
+      margin-bottom: 6px;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-top: 20px;
+    }
+
+    .contact-card p {
+      margin-bottom: 6px;
+    }
+
+    .contact-card .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    footer strong {
+      color: var(--text-secondary);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      body {
+        padding: 32px 16px 64px;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ── Header ── -->
+    <header>
+      <div class="app-badge">iOS App – Privacy Policy</div>
+      <h1>Objection <span>Privacy Policy</span></h1>
+      <p style="color: var(--text-secondary); margin-top: 12px; font-size: 15px;">
+        A gamified legal education experience by Landon Rowles
+      </p>
+      <p class="meta">Effective Date: April 1, 2026 &nbsp;|&nbsp; Last Updated: April 2026</p>
+    </header>
+
+    <!-- ── Intro callout ── -->
+    <div class="callout safe">
+      <div class="callout-icon">&#10003;</div>
+      <div class="callout-body">
+        <strong>Short Version</strong>
+        <p>
+          Objection does not collect your name, email, location, or any personal
+          information. Your game progress is saved only on your device. The only
+          third-party data activity comes from Google AdMob, which serves ads and
+          may use device identifiers for ad personalization.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Table of contents ── -->
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#overview">Overview &amp; Scope</a></li>
+        <li><a href="#data-collected">Information We Collect</a></li>
+        <li><a href="#admob">Third-Party Advertising (Google AdMob)</a></li>
+        <li><a href="#data-storage">Data Storage &amp; Security</a></li>
+        <li><a href="#data-sharing">Data Sharing &amp; Disclosure</a></li>
+        <li><a href="#children">Children's Privacy (COPPA)</a></li>
+        <li><a href="#your-rights">Your Choices &amp; Rights</a></li>
+        <li><a href="#not-legal-advice">Educational Content Disclaimer</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </nav>
+
+    <!-- ── 1. Overview ── -->
+    <section id="overview">
+      <h2><span class="section-num">1</span> Overview &amp; Scope</h2>
+      <p>
+        This Privacy Policy describes how <strong>Objection</strong> ("the App,"
+        "we," "us," or "our"), developed and published by Landon Rowles, handles
+        information in connection with your use of the App on Apple iOS devices.
+      </p>
+      <p>
+        By downloading and using Objection, you agree to the practices described
+        in this policy. If you do not agree, please discontinue use of the App.
+        This policy applies solely to the Objection iOS application and does not
+        govern any third-party websites or services that may be linked to or
+        referenced within the App.
+      </p>
+      <p>
+        Objection is a <strong>gamified legal education app</strong>. It is
+        designed to teach players about legal concepts, courtroom procedures, and
+        argumentation skills in an interactive format. It is not a law firm, does
+        not provide legal advice, and does not establish any attorney-client
+        relationship.
+      </p>
+    </section>
+
+    <!-- ── 2. Data Collected ── -->
+    <section id="data-collected">
+      <h2><span class="section-num">2</span> Information We Collect</h2>
+      <p>
+        We are committed to collecting the minimum amount of data necessary to
+        operate the App. The table below summarizes every category of data
+        relevant to Objection:
+      </p>
+
+      <table class="data-table" aria-label="Data collection summary">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Collected?</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name, email, or contact info</td>
+            <td><span class="tag no">No</span></td>
+            <td>The App has no accounts, registration, or login.</td>
+          </tr>
+          <tr>
+            <td>Location data</td>
+            <td><span class="tag no">No</span></td>
+            <td>The App never requests location permissions.</td>
+          </tr>
+          <tr>
+            <td>Health &amp; fitness data</td>
+            <td><span class="tag no">No</span></td>
+            <td>Not applicable.</td>
+          </tr>
+          <tr>
+            <td>Financial or payment info</td>
+            <td><span class="tag no">No</span></td>
+            <td>The App is free; no in-app purchases.</td>
+          </tr>
+          <tr>
+            <td>Contacts, photos, or media</td>
+            <td><span class="tag no">No</span></td>
+            <td>No device permissions of this type are requested.</td>
+          </tr>
+          <tr>
+            <td>Microphone or camera</td>
+            <td><span class="tag no">No</span></td>
+            <td>Not requested or used.</td>
+          </tr>
+          <tr>
+            <td>Game progress &amp; settings</td>
+            <td><span class="tag no">On-Device Only</span></td>
+            <td>Stored locally via iOS UserDefaults. Never transmitted to any server.</td>
+          </tr>
+          <tr>
+            <td>Device &amp; advertising identifiers</td>
+            <td><span class="tag third-party">Via AdMob</span></td>
+            <td>Google AdMob may access device identifiers (e.g., IDFA) for ad delivery. See Section 3.</td>
+          </tr>
+          <tr>
+            <td>Crash &amp; diagnostics data</td>
+            <td><span class="tag no">No</span></td>
+            <td>No third-party crash reporting or analytics SDKs are integrated.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout safe">
+        <div class="callout-icon">&#128274;</div>
+        <div class="callout-body">
+          <strong>No Backend Server</strong>
+          <p>
+            Objection has no backend server, database, or cloud infrastructure.
+            All game state, scores, and progress are stored exclusively on your
+            device using Apple's UserDefaults API and are never transmitted
+            externally by the App itself.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. AdMob ── -->
+    <section id="admob">
+      <h2><span class="section-num">3</span> Third-Party Advertising (Google AdMob)</h2>
+      <p>
+        Objection is free to download and play. To support ongoing development,
+        the App displays advertisements served by
+        <strong>Google AdMob</strong>, a mobile advertising platform operated by
+        Google LLC. AdMob may display banner ads and interstitial (full-screen)
+        ads during your use of the App.
+      </p>
+      <p>
+        When ads are displayed, Google AdMob may automatically collect certain
+        information from your device, which may include:
+      </p>
+      <ul>
+        <li>Device identifiers (e.g., Apple's Identifier for Advertisers, or IDFA)</li>
+        <li>IP address and general approximate location derived from IP</li>
+        <li>Device make, model, and operating system version</li>
+        <li>App interaction events related to ad delivery</li>
+        <li>Ad click and impression data</li>
+        <li>Diagnostic and performance information related to ad rendering</li>
+      </ul>
+      <p>
+        This data is collected and processed by Google under their own privacy
+        policies and terms of service, not by Objection or Landon Rowles.
+        We do not receive, access, or store any of the data Google collects
+        for advertising purposes.
+      </p>
+
+      <div class="callout info">
+        <div class="callout-icon">&#8505;</div>
+        <div class="callout-body">
+          <strong>Apple App Tracking Transparency (ATT)</strong>
+          <p>
+            On iOS 14 and later, Apple requires apps to request your permission
+            before accessing your device's IDFA for personalized advertising.
+            If you decline tracking when prompted, AdMob will serve
+            non-personalized ads. Either way, ads will still appear in the App.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        You can learn more about how Google collects and uses data through
+        AdMob by reviewing:
+      </p>
+      <ul>
+        <li>
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+            Google Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">
+            How Google uses data when you use our partners' sites or apps
+          </a>
+        </li>
+      </ul>
+      <p>
+        To opt out of personalized advertising by Google across apps and
+        websites, you can visit
+        <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">
+          Google Ad Settings
+        </a>
+        or adjust your iOS privacy settings under
+        <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>.
+      </p>
+    </section>
+
+    <!-- ── 4. Data Storage ── -->
+    <section id="data-storage">
+      <h2><span class="section-num">4</span> Data Storage &amp; Security</h2>
+      <p>
+        All data generated within Objection — including your progress, unlocked
+        content, and in-app settings — is stored locally on your iOS device
+        using Apple's <strong>UserDefaults</strong> system. This data:
+      </p>
+      <ul>
+        <li>Remains entirely on your device</li>
+        <li>Is not transmitted to any server operated by us</li>
+        <li>Is subject to iOS system-level encryption and the security model
+          of your device</li>
+        <li>Will be deleted if you uninstall the App or erase your device</li>
+        <li>Is not backed up to iCloud unless you have enabled iCloud backup for
+          your device overall (controlled by Apple, not by us)</li>
+      </ul>
+      <p>
+        Because we do not collect or store any personal data on our own
+        infrastructure, the risk of a data breach involving your personal
+        information through Objection is negligible. We nonetheless encourage
+        you to keep your iOS device and operating system up to date as a
+        general security best practice.
+      </p>
+    </section>
+
+    <!-- ── 5. Data Sharing ── -->
+    <section id="data-sharing">
+      <h2><span class="section-num">5</span> Data Sharing &amp; Disclosure</h2>
+      <p>
+        We do not sell, rent, trade, or otherwise share any personal information
+        about you with third parties, because we do not collect any personal
+        information in the first place.
+      </p>
+      <p>
+        The only third party that may collect data in connection with your use
+        of Objection is <strong>Google AdMob</strong>, as described in Section 3.
+        That data is governed entirely by Google's privacy policies.
+      </p>
+      <p>
+        We may disclose information if required to do so by law or in response
+        to a valid legal process (such as a court order or government request),
+        but given that we store no personal user data, any such disclosure
+        would not involve information about individual users.
+      </p>
+    </section>
+
+    <!-- ── 6. Children ── -->
+    <section id="children">
+      <h2><span class="section-num">6</span> Children's Privacy (COPPA)</h2>
+      <p>
+        The Children's Online Privacy Protection Act (COPPA) imposes requirements
+        on operators of websites and online services directed to children under
+        the age of 13 in the United States.
+      </p>
+      <p>
+        Objection is a legal education app intended for a <strong>general
+        audience of users aged 13 and older</strong>. The App is not knowingly
+        directed to children under 13, and we do not knowingly collect any
+        personal information from children under 13.
+      </p>
+
+      <div class="callout warn">
+        <div class="callout-icon">&#9888;</div>
+        <div class="callout-body">
+          <strong>Note for Parents and Guardians</strong>
+          <p>
+            If you believe your child under the age of 13 has used Objection and
+            you have concerns about data collected by Google AdMob, please review
+            Google's policies on children's privacy and consider restricting ad
+            tracking on your child's device via iOS Screen Time or Privacy settings.
+            You may also contact us at the address below.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        If we become aware that a child under 13 has provided us with personal
+        information, we will take steps to delete such information promptly. If
+        you believe this has occurred, please contact us immediately.
+      </p>
+    </section>
+
+    <!-- ── 7. Your Rights ── -->
+    <section id="your-rights">
+      <h2><span class="section-num">7</span> Your Choices &amp; Rights</h2>
+      <p>
+        Because Objection does not collect personal information, there is no
+        personal data for us to provide, correct, or delete on your request.
+        However, you retain the following controls:
+      </p>
+      <ul>
+        <li>
+          <strong>Ad Tracking:</strong> You can limit ad tracking or opt out of
+          personalized ads on your iOS device under
+          <em>Settings &gt; Privacy &amp; Security &gt; Tracking</em> and by
+          resetting or limiting your Advertising Identifier.
+        </li>
+        <li>
+          <strong>App Data:</strong> You can delete all locally stored App data
+          by uninstalling Objection from your device.
+        </li>
+        <li>
+          <strong>Google Ad Personalization:</strong> Manage Google's use of
+          your data for advertising at
+          <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.
+        </li>
+      </ul>
+      <p>
+        Residents of certain jurisdictions (such as California under the CCPA,
+        or the European Economic Area under the GDPR) may have additional rights
+        with respect to personal information. Because we do not collect personal
+        information, most of these rights are satisfied by default. For
+        advertising-related data collected by Google, please refer to
+        Google's policies and your regional data protection authority.
+      </p>
+    </section>
+
+    <!-- ── 8. Disclaimer ── -->
+    <section id="not-legal-advice">
+      <h2><span class="section-num">8</span> Educational Content Disclaimer</h2>
+      <p>
+        All content within Objection — including legal scenarios, case
+        simulations, courtroom dialogues, quizzes, and any explanations of legal
+        concepts — is provided for <strong>educational and entertainment
+        purposes only</strong>.
+      </p>
+      <p>
+        Nothing in the App constitutes legal advice, legal representation, or the
+        formation of an attorney-client relationship. Laws vary by jurisdiction
+        and change over time; content in the App may not reflect the most current
+        legal standards in your area. Always consult a qualified, licensed
+        attorney for advice regarding your specific legal situation.
+      </p>
+    </section>
+
+    <!-- ── 9. Changes ── -->
+    <section id="changes">
+      <h2><span class="section-num">9</span> Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time to reflect changes
+        in the App's features, applicable law, or our practices. When we make
+        material changes, we will update the <strong>Effective Date</strong> at
+        the top of this page.
+      </p>
+      <p>
+        We encourage you to review this policy periodically. Your continued use
+        of Objection after any changes to this policy constitutes your acceptance
+        of the updated terms.
+      </p>
+      <p>
+        For significant changes, we may provide additional notice within the App
+        itself at our discretion.
+      </p>
+    </section>
+
+    <!-- ── 10. Contact ── -->
+    <section id="contact">
+      <h2><span class="section-num">10</span> Contact Us</h2>
+      <p>
+        If you have any questions, concerns, or requests related to this Privacy
+        Policy or the App's data practices, please contact us:
+      </p>
+      <div class="contact-card">
+        <p class="label">Developer</p>
+        <p><strong>Landon Rowles</strong></p>
+
+        <p class="label" style="margin-top: 16px;">App</p>
+        <p><strong>Objection</strong> – iOS</p>
+
+        <p class="label" style="margin-top: 16px;">Email</p>
+        <p>
+          <a href="mailto:contact@objectionapp.com">contact@objectionapp.com</a>
+        </p>
+      </div>
+      <p style="margin-top: 20px;">
+        We will do our best to respond to all inquiries in a timely manner.
+      </p>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer>
+      <p>
+        &copy; 2026 <strong>Landon Rowles</strong>. All rights reserved.
+      </p>
+      <p style="margin-top: 6px;">
+        Objection is an independent iOS app. It is not affiliated with or
+        endorsed by any law firm, bar association, or legal authority.
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
